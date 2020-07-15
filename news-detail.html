@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业站</title>
+
+    <link rel="stylesheet" type="text/css" href="css/news.css">
+    <link rel="stylesheet" type="text/css" href="css/news-detail.css">
+    <link rel="icon" href="/img/mainbar-menu_mu.png" type="img/x-ico" />
+    <style>
+
+    </style>
+    <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+</head>
+
+<body>
+    <!--头部-->
+    <div class="header">
+        <a href="#about" class="logo"></a>
+        <div class="tel">电话：0979-8463599</div>
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">关于我们HOME</a></li>
+                <li><a href="news.html">最新消息NEWs</a></li>
+                <li><a href="about.html">店铺门市STORE</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--头部 end-->
+    <div class="news" id="news">
+
+    </div>
+    <!--底部-->
+    <div class="footer">
+        <p>
+            Copyright (C) 2017 The Alley 鹿角巷. All Rights Reserved.　
+        </p>
+    </div>
+    <!--底部 end-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+        var x = window.location.href.split("?")[1].split("=")[1];
+        var news_id = x.split("&")[0];
+        var page = window.location.href.split("&")[1].split("=")[1];
+
+
+        axios.get("https://www.fastmock.site/mock/e58fc91b0884060158ceaad33f8ff686/des/news/" + page + "/" + news_id)
+            .then(function (res) {
+                console.log(res);
+
+                $(".news").html(" <div class='n_t'><h1>" + res.data.title + "</h1><p>" + res.data.date + "</p></div><div class='n_c'> <p>" + res.data.text + "</p></div> <img src=" + res.data.img + ">");
+
+
+
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
+
+    </script>
+</body>
+
+</html>

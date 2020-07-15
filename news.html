@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业站</title>
+
+    <link rel="stylesheet" type="text/css" href="css/news.css">
+    <link rel="icon" href="/img/mainbar-menu_mu.png" type="img/x-ico" />
+    <style>
+
+    </style>
+    <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+
+</head>
+
+<body>
+    <!--头部-->
+    <div class="header">
+        <a href="#about" class="logo"></a>
+        <div class="tel">电话：0979-8463599</div>
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">关于我们HOME</a></li>
+                <li><a href="news.html">最新消息NEWs</a></li>
+                <li><a href="about.html">店铺门市STORE</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--头部 end-->
+
+    <!--新闻-->
+    <div class="news" id="news">
+        <div class="x"></div>
+        <div class="news_title common_title">
+            <h2>新闻中心</h2>
+            <p>news</p>
+            <i></i>
+        </div>
+        <div class="news_content">
+
+            <div class="news_con" id="news_01">
+
+            </div>
+            <div class="news_con" id="news_02">
+
+            </div>
+            <div class="news_con" id="news_03">
+
+            </div>
+
+        </div>
+        <div class="pg">
+            <ul>
+
+                <li id="p1">1</li>
+
+
+                <li id="p2">2</li>
+
+            </ul>
+        </div>
+    </div>
+    <!--新闻 end-->
+
+
+    <!--底部-->
+    <div class="footer">
+        <p>
+            Copyright (C) 2017 The Alley 鹿角巷. All Rights Reserved.　
+        </p>
+    </div>
+    <!--底部 end-->
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+        var page = 1;
+        $("#p1").click(function () {
+            page = 1;
+            get(page);
+        });
+        $("#p2").click(function () {
+            page = 2;
+            get(page);
+
+
+        });
+        function get(page) {
+            axios.get("https://www.fastmock.site/mock/e58fc91b0884060158ceaad33f8ff686/des/news/" + page)
+                .then(function (res) {
+                    console.log(res);
+
+                    $("#news_01").html("<img src=" + res.data.img1 + "> <div class='t'> <h2><a href='/news-detail.html?id=1&page=" + page + "'>" + res.data.title1 + "</a></h2><p>" + res.data.date1 + "</p><p>" + res.data.desc1 + "</p></div>");
+                    $("#news_02").html("<img src=" + res.data.img2 + "> <div class='t'> <h2><a href='/news-detail.html?id=2&page=" + page + "'>" + res.data.title2 + "</a></h2><p>" + res.data.date2 + "</p><p>" + res.data.desc2 + "</p></div>");
+                    $("#news_03").html("<img src=" + res.data.img3 + "> <div class='t'> <h2><a href='/news-detail.html?id=3&page=" + page + "'>" + res.data.title3 + "</a></h2><p>" + res.data.date3 + "</p><p>" + res.data.desc3 + "</p></div>");
+
+                })
+                .catch(function (err) {
+                    console.log(err);
+                })
+        }
+        get(1);
+    </script>
+</body>
+
+</html>

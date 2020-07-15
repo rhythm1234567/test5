@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业站</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="/img/mainbar-menu_mu.png" type="img/x-ico" />
+    <style>
+
+    </style>
+    <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+    <!--海报-->
+    <div class="banner">
+        <div class="slider">
+            <ul>
+                <li><img src="/img/01.jpg" alt=""></li>
+                <li><img src="/img/02.jpg" alt=""></li>
+                <li><img src="/img/03.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="logo"><img src="/img/top-logo_w.png" alt=""></div>
+        <div class="text"><img src="/img/sp.png" alt=""></div>
+    </div>
+    <!--海报 end-->
+    <!--头部-->
+    <div class="header">
+        <a href="#about" class="logo"></a>
+        <div class="tel">电话：0979-8463599</div>
+        <div class="nav">
+            <ul>
+
+                <li><a href="#about">概念分享IDEA</a></li>
+                <li><a href="#about">关于我们ABOUT</a></li>
+                <li><a href="#pro">饮品展示MENU</a></li>
+                <li><a href="#news">最新消息NEWs</a></li>
+                <li><a href="#store">店铺门市STORE</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--头部 end-->
+
+    <!--关于我们-->
+    <div class="about" id="about">
+        <div class="box box-l">
+            <a href="#">
+                <i></i>
+                <h2>概念分享</h2>
+                <p></p>
+            </a>
+        </div>
+        <div class="box box-r">
+            <a href="#">
+                <i></i>
+                <h2>关于我们</h2>
+                <p></p>
+            </a>
+        </div>
+    </div>
+    <!--关于我们 end-->
+
+    <!--产品-->
+    <div class="pro" id="pro">
+        <div class="pro_title common_title">
+            <h2>饮品展示</h2>
+            <p>menu</p>
+            <i></i>
+        </div>
+        <div class="pro_con">
+            <div class="btn btn-l">
+                <i></i>
+            </div>
+            <div class="out">
+                <div class="out_item" id="item01"><a><img><span></span></a></div>
+                <div class="out_item" id="item02"><a><img><span></span></a></div>
+                <div class="out_item" id="item03"><a><img><span></span></a></div>
+                <div class="out_item" id="item04"><a><img><span></span></a></div>
+
+
+
+            </div>
+            <div class="btn btn-r">
+                <i></i>
+            </div>
+        </div>
+    </div>
+    <!--产品 end-->
+
+    <!--新闻-->
+    <div class="news" id="news">
+        <div class="news_title common_title">
+            <h2>新闻中心</h2>
+            <p>news</p>
+            <i></i>
+        </div>
+        <div class="news_l">
+            <div class="news_l_title">
+                <h2>COMPANY CONFIDENCE</h2>
+                <i></i>
+                <div class="l_a">
+                    <a href="news.html">
+                        <h2>更多新闻</h2>
+                    </a>
+                </div>
+                <div class="l_title">
+                    <h2>NEWS</h2>
+                </div>
+            </div>
+            <div class="news_l_con">
+                <ul>
+                    <li><a href="news-detail.html?id=1&page=1" id="news_01"></a></li>
+                    <li><a href="news-detail.html?id=2&page=1" id="news_02"></a></li>
+                    <li><a href="news-detail.html?id=3&page=1" id="news_03"></a></li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+        <div class="news_r">
+            <video width="100%" controls="controls">
+                <source src="/img/p.mp4" type="video/mp4" />
+            </video>
+            <h2>宣传片</h2>
+            <p>trailer</p>
+
+        </div>
+    </div>
+    <!--新闻 end-->
+
+    <!--店铺-->
+    <div class="store" id="store">
+        <div class="s_con">
+            <div class="s_l">
+                <p>
+                    地址： 尖沙咀彌敦道27-33號良士大廈地下F舖（iSquare對⾯）</p>
+                <p>開放時間： 星期一 - 星期日 中午12:00 - 晚上10:00</p>
+
+            </div>
+            <div class="s_r">
+                <div class=" s_title ">
+                    <span>▶&nbsp;&nbsp;&nbsp;</span>
+                    <h2>百度地图</h2>
+                </div>
+                <div class="s_r_con"><a href="about.html"><img src="img/store_01.png"></a></div>
+            </div>
+
+        </div>
+
+    </div>
+    <!--店铺 end-->
+    <!--底部-->
+    <div class="footer">
+        <p>
+            Copyright (C) The Alley 鹿角巷. All Rights Reserved.　
+        </p>
+    </div>
+    <!--底部 end-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+
+
+        var page = 1;
+        $(".btn-r").click(function () {
+            $(".out_item").css("display", "none");
+            if (page < 2) { page = page + 1; get(page); }
+            else { confirm("当前最后一页"); }
+            $(".out_item").css("display", "inline-block");
+        });
+        $(".btn-l").click(function () {
+            $(".out_item").css("display", "none");
+            if (page > 1) { page = page - 1; get(page); }
+            else { confirm("当前第一页"); }
+            $(".out_item").css("display", "inline-block");
+
+
+        });
+
+
+        axios.get("https://www.fastmock.site/mock/e58fc91b0884060158ceaad33f8ff686/des/description")
+            .then(function (res) {
+                console.log(res);
+
+                $(".box-l p").html(res.data.test1);
+                $(".box-r p").html(res.data.test2);
+                $("#news_01 ").html(res.data.xinwen01_title);
+
+
+                $("#news_02 ").html(res.data.xinwen02_title);
+
+                $("#news_03 ").html(res.data.xinwen03_title);
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
+
+        function get(page) {
+            axios.get("https://www.fastmock.site/mock/e58fc91b0884060158ceaad33f8ff686/des/con/" + page)
+                .then(function (res) {
+                    $("#item01 img").attr("src", res.data.image01);
+                    $("#item02 img").attr("src", res.data.image02);
+                    $("#item03 img").attr("src", res.data.image03);
+                    $("#item04 img").attr("src", res.data.image04);
+
+                    $("#item01 a").attr("href", res.data.image01_url);
+                    $("#item02 a").attr("href", res.data.image02_url);
+                    $("#item03 a").attr("href", res.data.image03_url);
+                    $("#item04 a").attr("href", res.data.image04_url);
+
+                    $("#item01 span").html(res.data.image01_t);
+                    $("#item02 span").html(res.data.image02_t);
+                    $("#item03 span").html(res.data.image03_t);
+                    $("#item04 span").html(res.data.image04_t);
+
+                })
+                .catch(function (err) {
+                    console.log(err);
+                })
+
+        }
+
+        get(1);
+
+
+    </script>
+</body>
+
+</html>
