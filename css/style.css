@@ -100,7 +100,7 @@ ul,ol{list-style: none;}
     overflow: hidden;
 }
 .banner .slider{
-    width:1520px;
+    width:100%;
     margin: 0 auto;
 }
 .slider li{
@@ -109,7 +109,7 @@ ul,ol{list-style: none;}
     left: 0;
 }
 .slider img{
-    width: 1520px;   
+    width: 1920px;   
     display: none;
 }
 .slider ul{
