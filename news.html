@@ -92,9 +92,9 @@
                 .then(function (res) {
                     console.log(res);
 
-                    $("#news_01").html("<img src=" + res.data.img1 + "> <div class='t'> <h2><a href='/news-detail.html?id=1&page=" + page + "'>" + res.data.title1 + "</a></h2><p>" + res.data.date1 + "</p><p>" + res.data.desc1 + "</p></div>");
-                    $("#news_02").html("<img src=" + res.data.img2 + "> <div class='t'> <h2><a href='/news-detail.html?id=2&page=" + page + "'>" + res.data.title2 + "</a></h2><p>" + res.data.date2 + "</p><p>" + res.data.desc2 + "</p></div>");
-                    $("#news_03").html("<img src=" + res.data.img3 + "> <div class='t'> <h2><a href='/news-detail.html?id=3&page=" + page + "'>" + res.data.title3 + "</a></h2><p>" + res.data.date3 + "</p><p>" + res.data.desc3 + "</p></div>");
+                    $("#news_01").html("<img src=" + res.data.img1 + "> <div class='t'> <h2><a href='news-detail.html?id=1&page=" + page + "'>" + res.data.title1 + "</a></h2><p>" + res.data.date1 + "</p><p>" + res.data.desc1 + "</p></div>");
+                    $("#news_02").html("<img src=" + res.data.img2 + "> <div class='t'> <h2><a href='news-detail.html?id=2&page=" + page + "'>" + res.data.title2 + "</a></h2><p>" + res.data.date2 + "</p><p>" + res.data.desc2 + "</p></div>");
+                    $("#news_03").html("<img src=" + res.data.img3 + "> <div class='t'> <h2><a href='news-detail.html?id=3&page=" + page + "'>" + res.data.title3 + "</a></h2><p>" + res.data.date3 + "</p><p>" + res.data.desc3 + "</p></div>");
 
                 })
                 .catch(function (err) {
