@@ -238,7 +238,11 @@
 
         get(1);
 
+        $(".nav a").click(function (e) {
+            var opt_value = $(e.target).html();
 
+            _hmt.push(['_trackEvent', 'nav', 'click', opt_label, 1]);
+        });
     </script>
 </body>
 
